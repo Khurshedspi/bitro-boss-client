@@ -28,6 +28,18 @@ const NavBar = () => {
           Our Menu
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/order"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-blue-500 text-white font-bold px-4 py-2 rounded"
+              : "text-white px-4 py-2"
+          }
+        >
+          Order Food
+        </NavLink>
+      </li>
     </>
   );
 
