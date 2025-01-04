@@ -1,36 +1,32 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const navOptions = (
     <>
       <li>
-        <a href="#item1">Item 555</a>
-      </li>
-      <li tabIndex={0} className="relative group">
-        <a className="justify-between">
-          Parent
-          <svg
-            className="fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-          </svg>
-        </a>
-        {/* Submenu */}
-        <ul className="absolute left-0 hidden group-hover:block bg-gray-100 text-black p-2 rounded shadow-md">
-          <li>
-            <a href="#submenu1">Submenu 1</a>
-          </li>
-          <li>
-            <a href="#submenu2">Submenu 2</a>
-          </li>
-        </ul>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-blue-500 text-white font-bold px-4 py-2 rounded"
+              : "text-white px-4 py-2"
+          }
+        >
+          Home
+        </NavLink>
       </li>
       <li>
-        <a href="#item3">Item 3</a>
+        <NavLink
+          to="/menu"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-blue-500 text-white font-bold px-4 py-2 rounded"
+              : "text-white px-4 py-2"
+          }
+        >
+          Our Menu
+        </NavLink>
       </li>
     </>
   );
@@ -69,7 +65,7 @@ const NavBar = () => {
             {navOptions}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl" href="#home">
+        <a className="normal-case text-xl" href="#home">
           Bistro Boss
         </a>
       </div>
