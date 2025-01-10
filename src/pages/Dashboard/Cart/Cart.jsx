@@ -5,11 +5,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
-  //   console.log(cart);
-  //   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
-  const totalPrice = parseFloat(
-    cart.reduce((total, item) => total + item.price, 0).toFixed(2)
-  );
+  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
   const axiosSecure = useAxiosSecure();
 
   const handleDelete = (id) => {
@@ -49,7 +45,7 @@ const Cart = () => {
           {/* head */}
           <thead>
             <tr>
-              <th>Serial</th>
+              <th>#</th>
               <th>Image</th>
               <th>Name</th>
               <th>Price</th>
